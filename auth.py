@@ -131,7 +131,7 @@ class KMITLAuth(object):
         log.debug(self.last_res.text)
         try:
             self.DSID = self.last_res.history[0].cookies['DSID']
-            self.xsauth = BeautifulSoup(self.last_res.text, "lxml").find('input').get('value')
+            self.xsauth = BeautifulSoup(self.last_res.text, "html.parser").find('input').get('value')
             log.debug("DSID: %s" % self.DSID)
             log.debug("xsauth: %s" % self.xsauth)
         except KeyError as e:
