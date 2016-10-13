@@ -111,6 +111,8 @@ class KMITLAuth(object):
         
         if os.environ['generation'] == '1':
             realm = "ระบบแอคเคาท์เก่า (Generation1)"
+        elif os.environ['generation'] == '2':
+            realm = "ระบบแอคเคาท์ใหม่ (Generation2)"
 		
         post_data = dict(
             tz_offset="60",
